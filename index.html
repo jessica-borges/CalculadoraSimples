@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html align="center">
+    <head>
+        <meta charset="UTF-8">
+        <title> Calculadora Simples </title>
+        
+        <style>
+            body {
+                padding-top: 20px;
+               background: rgb(149, 222, 230);
+               font: arial;
+               font-size: 18px;
+               
+            }
+            #v1 {
+                width: 40px;
+            }
+            #v2 {
+                width: 40px;
+            }
+            #res {
+                width: 40px;
+                
+            }
+            #somar {
+                background: rgb(15, 30, 147);
+                color: white;
+                font-size: 15px;
+                padding-top: 5px;
+                padding-left: 15px;
+                padding-right: 15px;
+                padding-bottom: 6px;
+            }
+            
+        </style>
+
+    </head>
+    <body>
+        <script type="text/javascript">
+            function somar() {
+                res.value = parseInt(v1.value) + parseInt(v2.value);
+            } // res = resultado | parseInt = transforma em inteiro
+        </script>
+        <h1>Calculadora Simples</h1>
+        Valor 1: <input type="text" id="v1" value="0"><br>
+        Valor 2: <input type="text" id="v2" value="0"><br><br>
+        <input type="button" value="Somar" id="somar"
+            onclick="somar()"><br><br>
+        Resultado: <input type="text" id="res" readonly><br>
+    </body>
+</html>
