@@ -6,12 +6,11 @@
         
         <style>
             body {
-                padding-top: 20px;
+               padding-top: 20px;
                background: rgb(149, 222, 230);
                font: arial;
-               font-size: 18px;
-               
-            }
+               font-size: 18px;}
+
             #v1 {
                 width: 40px;
             }
@@ -19,11 +18,14 @@
                 width: 40px;
             }
             #res {
+                position:fixed;
                 width: 40px;
                 
             }
             #somar {
-                background: rgb(15, 30, 147);
+                border-radius: 15px;
+                border-color:aliceblue;
+                background: #fa064f;
                 color: white;
                 font-size: 15px;
                 padding-top: 5px;
@@ -31,6 +33,43 @@
                 padding-right: 15px;
                 padding-bottom: 6px;
             }
+
+            #sub {
+                border-radius: 15px;
+                border-color: aliceblue;
+                background:#fa064f;
+                color: white;
+                font-size: 15px;
+                padding-top: 5px;
+                padding-left: 15px;
+                padding-right: 15px;
+                padding-bottom: 6px;
+            }
+
+            #mul {
+                border-radius: 15px;
+                border-color: aliceblue;
+                background: #fa064f;
+                color: white;
+                font-size: 15px;
+                padding-top: 5px;
+                padding-left: 15px;
+                padding-right: 15px;
+                padding-bottom: 6px;
+            }
+
+            #div {
+                border-radius: 15px;
+                border-color: aliceblue;
+                background: #fa064f;
+                color: white;
+                font-size: 15px;
+                padding-top: 5px;
+                padding-left: 15px;
+                padding-right: 15px;
+                padding-bottom: 6px;
+            }
+
             
         </style>
 
@@ -38,14 +77,36 @@
     <body>
         <script type="text/javascript">
             function somar() {
-                res.value = parseInt(v1.value) + parseInt(v2.value);
-            } // res = resultado | parseInt = transforma em inteiro
+                res.value = parseFloat(v1.value) + parseFloat(v2.value);
+            } // res = resultado | parseFloat = transforma em real
+
+            function subtrair() {
+                res.value = parseFloat(v1.value) - parseFloat(v2.value);
+            }
+
+            function multiplicar() {
+                res.value = parseFloat(v1.value) * parseFloat(v1.value;)
+            }
+
+            function dividir() {
+                if (parseFloat(v2.value) === 0) // o sinal === significa exatamente igual 
+                    res.value = "Erro!";
+                else 
+                    res.value = parseFloat(v1.value) / parseFloat(v2.value);
+            }
         </script>
-        <h1>Calculadora Simples</h1>
+        <h1>Calculadora Simples</h1><br>
         Valor 1: <input type="text" id="v1" value="0"><br>
-        Valor 2: <input type="text" id="v2" value="0"><br><br>
-        <input type="button" value="Somar" id="somar"
-            onclick="somar()"><br><br>
+        Valor 2: <input type="text" id="v2" value="0"><br><br><br>
+        
+        <input type="button" value="Somar" id="somar" onclick="somar()">
+
+        <input type="button" value="Subtrair" id="sub" onclick="subtrair()">
+
+        <input type="button" value="Multiplicar" id="mul" onclick="multiplicar()">
+
+        <input type="button" value="Dividir" id="div" onclick="dividir()"><br><br><br>
+
         Resultado: <input type="text" id="res" readonly><br>
     </body>
 </html>
